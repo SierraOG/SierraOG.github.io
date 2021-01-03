@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/slideshow.css" />
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 		<link rel="manifest" href="/site.webmanifest">
@@ -33,17 +34,62 @@
 					<div class="row">
 						<div class="col-8 col-7-large col-12-medium">
 							<header>
-								<h1> <strong>Experimental air brake</strong>.</h1>
+								<h1> <strong>GPS Navigation Solution</strong>.</h1>
 							</header>
-							<p>Tested experimental air brake designed for UT's Longhorn Rocketry Association in air tunnel using flow visualization and wake profiling.</p>
+							<p>In the final laboratory for the Satellite-Based Navigation course, a navigation solution was derived in MATLAB based on pseudorange measurements that
+								were calculated from observation data from an unknown continuously-operating reference station
+								(CORS) receiver. The navigation solution implemented a least-squares techniques using QR decomposition to determine the location of the receiver. Pseudorange calculations accounted for ionospheric, tropospheric, earth rotation, and
+								relativistic effects.
+								</p>
+							<a href="#work" class="button large scrolly">See how it worked</a>
                         </div>
                         <div class="col-4 col-5-large col-12-medium">
-                                <a class="image right"><img src="images/trimmedlab3.gif" alt="Picture of smoke wand over air brake" /></a>
+                                <a class="image right"><img src="images/3d.jpg" alt="iterations of solution" /></a>
                         </div>
                     </div>
                 </div>
             </article>
-            
+			
+			<!-- Slideshow container -->
+			<article id="work" class="wrapper">
+
+			<div class="slideshow-container">
+
+				<!-- Full-width images with number and caption text -->
+				<div class="mySlides fade">
+				<img src="images/3d.jpg" style="width:100%">
+				<div class="text">This plot shows the position estimates produced by the solver over 6 iterations with an initial guess for the receiver location that is millions of meters
+					off from the actual location</div>
+				</div>
+
+				<div class="mySlides fade">
+				<img src="images/iterationsnums.PNG" style="width:100%">
+				<div class="text">This chart shows the X, Y, and Z ECEF position estimates produced by the solver for the first 6 iterations mentioned in the previous slide. It can be shown from this that the navigation solution converges quickly on the actual location and has a large attractor region which gives leniancy to the initial position estimate provided.</div>
+				</div>
+			
+				<div class="mySlides fade">
+				<img src="images/allcorr.jpg" style="width:100%">
+				<div class="text">Pseudorange calculations in this project accounted for ionospheric, tropospheric, earth
+					rotation, and relativistic effects. This figure shows the average error of each effect for a 100 second period. From this figure
+					it is clear that out of these four effects, the largest source of error, if not accounted for, would
+					have been the tropospheric effects followed by the Earth rotation, relativistic effects, and finally
+					the ionospheric effects.</div>
+				</div>
+			
+				<!-- Next and previous buttons -->
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			</div>
+			<br>
+			
+			<!-- The dots/circles -->
+			<div style="text-align:center">
+				<span class="dot" onclick="currentSlide(1)"></span> 
+				<span class="dot" onclick="currentSlide(2)"></span> 
+				<span class="dot" onclick="currentSlide(3)"></span> 
+			</div>
+			</article>
+
 		<!-- Contact -->
 			<article id="contact" class="wrapper style4">
 				<div class="container medium">
@@ -62,5 +108,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/slideshow.js"></script>
 	</body>
 </html>
